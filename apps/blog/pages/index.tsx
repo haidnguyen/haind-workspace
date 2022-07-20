@@ -1,10 +1,3 @@
-export function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.@emotion/styled file.
-   */
-  return <div>HomePage</div>;
-}
+import dynamic from 'next/dynamic';
 
-export default Index;
+export default dynamic(() => import('@haind-workspace/blog/feature-home').then(m => m.BlogFeatureHome));
