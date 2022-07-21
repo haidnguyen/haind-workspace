@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@haind-workspace/blog/feature-home": ["libs/blog/feature-home/src/index.ts"]
+      "@haind-workspace/blog/data-posts": ["libs/blog/data-posts/src/index.ts"],
+      "@haind-workspace/blog/feature-home": ["libs/blog/feature-home/src/index.ts"],
+      "@haind-workspace/blog/ui-layout": ["libs/blog/ui-layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

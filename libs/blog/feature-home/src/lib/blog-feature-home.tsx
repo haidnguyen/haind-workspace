@@ -1,10 +1,28 @@
-import { Text } from '@chakra-ui/react';
+import { PostData } from '@haind-workspace/blog/data-posts';
+import { BlogUiLayout } from '@haind-workspace/blog/ui-layout';
 
-export function BlogFeatureHome() {
+interface BlogFeatureHomeProps {
+  allPostsData: PostData[];
+}
+
+export function BlogFeatureHome({ allPostsData }: BlogFeatureHomeProps) {
   return (
-    <Text fontSize='2xl' color='pink.500'>
-      Home Page
-    </Text>
+    <BlogUiLayout>
+      <section>
+        <h2>Blog</h2>
+        <ul>
+          {allPostsData.map(({ id, date, title }) => (
+            <li key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </BlogUiLayout>
   );
 }
 
