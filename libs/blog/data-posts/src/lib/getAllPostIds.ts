@@ -1,5 +1,5 @@
 import { readdirSync } from 'fs';
-import { postDirectory } from './posts-directory';
+import { postDirectory } from './postDirectory';
 
 export const getAllPostIds = () => {
   const fileNames = readdirSync(postDirectory);
@@ -10,3 +10,5 @@ export const getAllPostIds = () => {
     },
   }));
 };
+
+export type AllPostIds = ReturnType<typeof getAllPostIds>;

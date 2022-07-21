@@ -6,6 +6,7 @@
     "blog-data-posts": "libs/blog/data-posts",
     "blog-feature-home": "libs/blog/feature-home",
     "blog-feature-post": "libs/blog/feature-post",
+    "blog-ui-date": "libs/blog/ui-date",
     "blog-ui-layout": "libs/blog/ui-layout"
   }
 }

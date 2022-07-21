@@ -1,19 +1,14 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, Text } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Higher-order Engineer</title>
-      </Head>
-      <ChakraProvider>
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </ChakraProvider>
-    </>
+    <ChakraProvider>
+      <main>
+        <Component {...pageProps} />
+        <Text color='pink.500'>Test</Text>
+      </main>
+    </ChakraProvider>
   );
 }
 

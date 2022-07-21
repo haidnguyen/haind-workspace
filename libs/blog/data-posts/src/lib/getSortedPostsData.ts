@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import { postDirectory } from './posts-directory';
+import { postDirectory } from './postDirectory';
 
 export interface PostData {
   id: string;

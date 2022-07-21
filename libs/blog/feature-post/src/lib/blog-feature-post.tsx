@@ -1,18 +1,23 @@
-import { PostData } from '@haind-workspace/blog/data-posts';
+import { PostDetail } from '@haind-workspace/blog/data-posts';
+import { Date } from '@haind-workspace/blog/ui-date';
 import { BlogUiLayout } from '@haind-workspace/blog/ui-layout';
+import Head from 'next/head';
 
 export interface BlogFeaturePostProps {
-  postData: PostData;
+  postData: PostDetail;
 }
 
 export function BlogFeaturePost({ postData }: BlogFeaturePostProps) {
   return (
     <BlogUiLayout>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
       {postData.title}
       <br />
-      {postData.id}
+      <Date dateString={postData.date} />
       <br />
-      {postData.date}
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </BlogUiLayout>
   );
 }
