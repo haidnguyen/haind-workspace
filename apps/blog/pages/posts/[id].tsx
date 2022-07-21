@@ -1,21 +1,7 @@
-import { getAllPostIds, getPostData, PostData } from '@haind-workspace/blog/data-posts';
-import { BlogUiLayout } from '@haind-workspace/blog/ui-layout';
+import { getAllPostIds, getPostData } from '@haind-workspace/blog/data-posts';
+import dynamic from 'next/dynamic';
 
-interface PostProps {
-  postData: PostData;
-}
-
-export default function Post({ postData }: PostProps) {
-  return (
-    <BlogUiLayout>
-      {postData.title}
-      <br />
-      {postData.id}
-      <br />
-      {postData.date}
-    </BlogUiLayout>
-  );
-}
+export default dynamic(() => import('@haind-workspace/blog/feature-post').then(m => m.BlogFeaturePost));
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();

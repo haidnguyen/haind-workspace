@@ -1,0 +1,43 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/blog/feature-post/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/blog/feature-post",
+        "tsConfig": "libs/blog/feature-post/tsconfig.lib.json",
+        "project": "libs/blog/feature-post/package.json",
+        "entryFile": "libs/blog/feature-post/src/index.ts",
+        "external": ["@emotion/react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/blog/feature-post/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/blog/feature-post/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/blog/feature-post"],
+      "options": {
+        "jestConfig": "libs/blog/feature-post/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

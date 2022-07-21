@@ -17,6 +17,7 @@
     "paths": {
       "@haind-workspace/blog/data-posts": ["libs/blog/data-posts/src/index.ts"],
       "@haind-workspace/blog/feature-home": ["libs/blog/feature-home/src/index.ts"],
+      "@haind-workspace/blog/feature-post": ["libs/blog/feature-post/src/index.ts"],
       "@haind-workspace/blog/ui-layout": ["libs/blog/ui-layout/src/index.ts"]
     }
   },
