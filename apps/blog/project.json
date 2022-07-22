@@ -54,6 +54,12 @@
       "options": {
         "lintFilePatterns": ["apps/blog/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "next start dist/apps/blog"
+      }
     }
   },
   "tags": []
