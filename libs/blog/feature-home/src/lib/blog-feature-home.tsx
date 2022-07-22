@@ -1,6 +1,6 @@
 import { PostData } from '@haind-workspace/blog/data-posts';
 import { Date } from '@haind-workspace/blog/ui-date';
-import { BlogUiLayout } from '@haind-workspace/blog/ui-layout';
+import { Layout } from '@haind-workspace/blog/ui-layout';
 import Link from 'next/link';
 
 interface BlogFeatureHomeProps {
@@ -9,7 +9,7 @@ interface BlogFeatureHomeProps {
 
 export function BlogFeatureHome({ allPostsData }: BlogFeatureHomeProps) {
   return (
-    <BlogUiLayout>
+    <Layout>
       <section>
         <h2>Blog</h2>
         <ul>
@@ -24,7 +24,7 @@ export function BlogFeatureHome({ allPostsData }: BlogFeatureHomeProps) {
           ))}
         </ul>
       </section>
-    </BlogUiLayout>
+    </Layout>
   );
 }
 

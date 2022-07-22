@@ -1,1 +1,1 @@
-export * from './lib/blog-ui-layout';
+export * from './lib/layout';

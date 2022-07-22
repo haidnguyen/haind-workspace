@@ -1,6 +1,6 @@
 import { PostDetail } from '@haind-workspace/blog/data-posts';
 import { Date } from '@haind-workspace/blog/ui-date';
-import { BlogUiLayout } from '@haind-workspace/blog/ui-layout';
+import { Layout } from '@haind-workspace/blog/ui-layout';
 import Head from 'next/head';
 
 export interface BlogFeaturePostProps {
@@ -9,7 +9,7 @@ export interface BlogFeaturePostProps {
 
 export function BlogFeaturePost({ postData }: BlogFeaturePostProps) {
   return (
-    <BlogUiLayout>
+    <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -18,7 +18,7 @@ export function BlogFeaturePost({ postData }: BlogFeaturePostProps) {
       <Date dateString={postData.date} />
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-    </BlogUiLayout>
+    </Layout>
   );
 }
 

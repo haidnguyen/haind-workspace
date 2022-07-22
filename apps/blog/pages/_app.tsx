@@ -1,4 +1,4 @@
-import { ChakraProvider, Text } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -6,7 +6,6 @@ function CustomApp({ Component, pageProps }: AppProps) {
     <ChakraProvider>
       <main>
         <Component {...pageProps} />
-        <Text color='pink.500'>Test</Text>
       </main>
     </ChakraProvider>
   );
