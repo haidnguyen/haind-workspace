@@ -8,6 +8,7 @@ import {
   DrawerOverlay,
   useDisclosure,
 } from '@chakra-ui/react';
+import { useTitle } from '@haind-workspace/blog/data-title';
 import { PropsWithChildren } from 'react';
 import { Footer } from './footer';
 import { Header } from './header';
@@ -20,6 +21,8 @@ const routes: NavigationMenuProps['routes'] = [
 
 export function Layout({ children }: PropsWithChildren) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { title } = useTitle();
+
   return (
     <>
       <Box as='header'>
@@ -29,7 +32,7 @@ export function Layout({ children }: PropsWithChildren) {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton top={4} />
-          <DrawerHeader p={4}>Higher-order Engineer</DrawerHeader>
+          <DrawerHeader p={4}>{title}</DrawerHeader>
           <DrawerBody p={4}>
             <NavigationMenu routes={routes} onLinkClick={onClose} />
           </DrawerBody>

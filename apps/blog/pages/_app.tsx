@@ -1,17 +1,21 @@
 import { ChakraProvider } from '@chakra-ui/react';
+import { TitleProvider } from '@haind-workspace/blog/data-title';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
 function CustomApp({ Component, pageProps }: AppProps) {
+  const title = 'Higher-order Engineer';
   return (
     <>
       <Head>
-        <title>Higher-order Engineer</title>
+        <title>{title}</title>
       </Head>
       <ChakraProvider>
-        <main>
-          <Component {...pageProps} />
-        </main>
+        <TitleProvider title={title}>
+          <main>
+            <Component {...pageProps} />
+          </main>
+        </TitleProvider>
       </ChakraProvider>
     </>
   );
