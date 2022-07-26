@@ -28,7 +28,7 @@ export function Layout({ children }: PropsWithChildren) {
       <Box as='header'>
         <Header onMenuClick={onOpen} />
       </Box>
-      <Drawer isOpen={isOpen} onClose={onClose} placement='left'>
+      <Drawer isOpen={isOpen} onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton top={4} />

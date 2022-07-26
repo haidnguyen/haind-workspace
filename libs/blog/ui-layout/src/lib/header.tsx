@@ -1,6 +1,7 @@
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { HStack, IconButton, Text } from '@chakra-ui/react';
+import { Flex, HStack, IconButton, Text } from '@chakra-ui/react';
 import { useTitle } from '@haind-workspace/blog/data-title';
+import Image from 'next/image';
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -10,7 +11,14 @@ export function Header({ onMenuClick }: HeaderProps) {
   const { title } = useTitle();
 
   return (
-    <HStack align='center' p={2} borderBottom='1px' borderColor='gray.200' spacing={2}>
+    <Flex justify='space-between' p={2} borderBottom='1px' borderColor='gray.200'>
+      <HStack spacing={4}>
+        <Image src='/logo.png' width={40} height={40} alt='Logo' />
+        <Text fontSize='xl' fontWeight='bold' display={['none', 'initial']}>
+          {title}
+        </Text>
+      </HStack>
+
       <IconButton
         border='none'
         borderRadius='0'
@@ -18,10 +26,8 @@ export function Header({ onMenuClick }: HeaderProps) {
         aria-label='Open navigation menu'
         icon={<HamburgerIcon />}
         onClick={onMenuClick}
+        display={['initial', 'none']}
       />
-      <Text fontSize='xl' as='h1'>
-        {title}
-      </Text>
-    </HStack>
+    </Flex>
   );
 }

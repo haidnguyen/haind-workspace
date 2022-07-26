@@ -9,6 +9,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>{title}</title>
+        <link rel='icon' type='image/x-icon' href='/logo.ico' />
       </Head>
       <ChakraProvider>
         <TitleProvider title={title}>
