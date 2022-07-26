@@ -6,6 +6,9 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
+  Flex,
+  Grid,
+  GridItem,
   useDisclosure,
 } from '@chakra-ui/react';
 import { useTitle } from '@haind-workspace/blog/data-title';
@@ -39,7 +42,12 @@ export function Layout({ children }: PropsWithChildren) {
         </DrawerContent>
       </Drawer>
 
-      <Box>{children}</Box>
+      <Grid as='section' p={[0, 2]} pt={[4, 2]} gap={4} templateColumns='repeat(10, 1fr)'>
+        <GridItem as='nav' colSpan={[0, 3]} display={['none', 'initial']}>
+          sidebar
+        </GridItem>
+        <GridItem colSpan={[10, 7]}>{children}</GridItem>
+      </Grid>
 
       <Box as='footer'>
         <Footer />

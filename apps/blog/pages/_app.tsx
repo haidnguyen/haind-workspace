@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 import { TitleProvider } from '@haind-workspace/blog/data-title';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -13,9 +13,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
       <ChakraProvider>
         <TitleProvider title={title}>
-          <main>
+          <Box as='main' bgColor='blackAlpha.100'>
             <Component {...pageProps} />
-          </main>
+          </Box>
         </TitleProvider>
       </ChakraProvider>
     </>

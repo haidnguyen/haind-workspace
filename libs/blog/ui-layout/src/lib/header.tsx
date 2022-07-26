@@ -11,7 +11,7 @@ export function Header({ onMenuClick }: HeaderProps) {
   const { title } = useTitle();
 
   return (
-    <Flex justify='space-between' p={2} borderBottom='1px' borderColor='gray.200'>
+    <Flex justify='space-between' p={2} borderBottom='1px' borderColor='gray.200' bgColor='white'>
       <HStack spacing={4}>
         <Image src='/logo.png' width={40} height={40} alt='Logo' />
         <Text fontSize='xl' fontWeight='bold' display={['none', 'initial']}>
