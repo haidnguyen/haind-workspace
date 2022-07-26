@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@chakra-ui/icons': ^2.0.4
   '@chakra-ui/react': ^2.2.4
   '@emotion/babel-plugin': 11.9.2
   '@emotion/react': 11.9.3
@@ -53,6 +54,7 @@ specifiers:
   typescript: ~4.7.2
 
 dependencies:
+  '@chakra-ui/icons': 2.0.4_yvhl5ql2jypczm6naccxme2hbi
   '@chakra-ui/react': 2.2.4_net4najgnwgmpjbrx4saxcpq2u
   '@emotion/react': 11.9.3_4jaruczdv2uxjj3lb2xbkiuci4
   '@emotion/server': 11.4.0
@@ -60,7 +62,6 @@ dependencies:
   '@nrwl/next': 14.4.2_524v34lzpu6j6etbpg3ucdibdu
   core-js: 3.23.4
   dayjs: 1.11.4
-  eslint-plugin-prettier: 4.2.1_3bxuljqtvydnhd5sas5uchdgnm
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   gray-matter: 4.0.3
   next: 12.1.6_beenoklgwfttvph5dgxj7na7aq
@@ -96,6 +97,7 @@ devDependencies:
   eslint-config-prettier: 8.1.0_eslint@8.15.0
   eslint-plugin-import: 2.26.0_6vny5schrswn2shqqxxv3k2jfa
   eslint-plugin-jsx-a11y: 6.6.0_eslint@8.15.0
+  eslint-plugin-prettier: 4.2.1_3bxuljqtvydnhd5sas5uchdgnm
   eslint-plugin-react: 7.30.1_eslint@8.15.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.15.0
   jest: 27.5.1_ts-node@10.8.2
@@ -1553,6 +1555,18 @@ packages:
     dependencies:
       '@chakra-ui/system': 2.2.2_fdnqutfacy7v3gmlcm66flps3q
       '@chakra-ui/utils': 2.0.4
+      react: 18.2.0
+    dev: false
+
+  /@chakra-ui/icons/2.0.4_yvhl5ql2jypczm6naccxme2hbi:
+    resolution: {integrity: sha512-/Xh6UtIilFhSCxZ6pKmB3zaatvGMc+IAvPb0TvlegWfNaLI7XwHWkEoK+GxYXV02wT/yqmup2gd41/OL3S0YLg==}
+    peerDependencies:
+      '@chakra-ui/system': '>=2.0.0-next.0'
+      react: '>=18'
+    dependencies:
+      '@chakra-ui/icon': 3.0.4_yvhl5ql2jypczm6naccxme2hbi
+      '@chakra-ui/system': 2.2.2_fdnqutfacy7v3gmlcm66flps3q
+      '@types/react': 18.0.14
       react: 18.2.0
     dev: false
 
@@ -5999,6 +6013,7 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       eslint: 8.15.0
+    dev: true
 
   /eslint-import-resolver-node/0.3.6:
     resolution: {integrity: sha512-0En0w03NRVMn9Uiyn8YRPDKvWjxCWkslUEhGNTdGx15RvPJYQ+lbOlqrlNI2vEAs4pDYK4f/HN2TbDmk5TP0iw==}
@@ -6172,7 +6187,7 @@ packages:
       eslint-config-prettier: 8.1.0_eslint@8.15.0
       prettier: 2.7.1
       prettier-linter-helpers: 1.0.0
-    dev: false
+    dev: true
 
   /eslint-plugin-react-hooks/4.6.0_eslint@8.15.0:
     resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
@@ -6477,7 +6492,7 @@ packages:
 
   /fast-diff/1.2.0:
     resolution: {integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==}
-    dev: false
+    dev: true
 
   /fast-glob/3.2.11:
     resolution: {integrity: sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==}
@@ -9662,7 +9677,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       fast-diff: 1.2.0
-    dev: false
+    dev: true
 
   /prettier/2.7.1:
     resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
