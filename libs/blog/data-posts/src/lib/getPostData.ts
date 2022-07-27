@@ -14,7 +14,9 @@ export interface PostDetail {
 
 export const getPostData = async (id: string, locale: string) => {
   const allFiles = readdirSync(path.join(postDirectory, id));
-  const contentLocale = allFiles.map(fileName => fileName.replace(/\.md$/, '')).includes(locale) ? locale : 'en';
+  const contentLocale = allFiles.map(fileName => fileName.replace(/\.md$/, '')).includes(locale)
+    ? locale
+    : allFiles[0].replace(/\.md$/, '');
   const fullPath = path.join(postDirectory, id, `${contentLocale}.md`);
   const fileContent = readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContent);

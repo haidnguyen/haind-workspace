@@ -15,7 +15,9 @@ export const getSortedPostsData = (locale: string) => {
   const allPostsData = fileNames.map(fileName => {
     const id = fileName.replace(/\.md$/, '');
     const allFileNames = readdirSync(path.join(postDirectory, fileName));
-    const contentLocale = allFileNames.map(fileName => fileName.replace(/\.md$/, '')).includes(locale) ? locale : 'en';
+    const contentLocale = allFileNames.map(fileName => fileName.replace(/\.md$/, '')).includes(locale)
+      ? locale
+      : allFileNames[0].replace(/\.md$/, '');
     const fullPath = path.join(postDirectory, fileName, `${contentLocale}.md`);
     const fileContents = readFileSync(fullPath, 'utf-8');
     const matterResult = matter(fileContents);
