@@ -3,8 +3,8 @@ import dynamic from 'next/dynamic';
 
 export default dynamic(() => import('@haind-workspace/blog/feature-post').then(m => m.BlogFeaturePost), { ssr: false });
 
-export async function getStaticPaths() {
-  const paths = getAllPostIds();
+export async function getStaticPaths({ locales }) {
+  const paths = getAllPostIds(locales);
 
   return {
     paths,
@@ -12,8 +12,8 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }: AllPostIds[0]) {
-  const postData = await getPostData(params.id);
+export async function getStaticProps({ params, locale }: AllPostIds[0]) {
+  const postData = await getPostData(params.id, locale);
 
   return {
     props: {

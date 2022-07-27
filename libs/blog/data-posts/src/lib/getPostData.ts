@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readdirSync, readFileSync } from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import { remark } from 'remark';
@@ -12,8 +12,10 @@ export interface PostDetail {
   contentHtml: string;
 }
 
-export const getPostData = async (id: string) => {
-  const fullPath = path.join(postDirectory, `${id}.md`);
+export const getPostData = async (id: string, locale: string) => {
+  const allFiles = readdirSync(path.join(postDirectory, id));
+  const contentLocale = allFiles.map(fileName => fileName.replace(/\.md$/, '')).includes(locale) ? locale : 'en';
+  const fullPath = path.join(postDirectory, id, `${contentLocale}.md`);
   const fileContent = readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContent);
   const processedContent = await remark().use(html).process(matterResult.content);

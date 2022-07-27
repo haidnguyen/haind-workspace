@@ -1,14 +1,12 @@
 import { readdirSync } from 'fs';
 import { postDirectory } from './postDirectory';
 
-export const getAllPostIds = () => {
+export const getAllPostIds = (locales: string[]) => {
   const fileNames = readdirSync(postDirectory);
 
-  return fileNames.map(fileName => ({
-    params: {
-      id: fileName.replace(/\.md$/, ''),
-    },
-  }));
+  return locales.flatMap(locale =>
+    fileNames.map(fileName => ({ params: { id: fileName.replace(/\.md$/, '') }, locale }))
+  );
 };
 
 export type AllPostIds = ReturnType<typeof getAllPostIds>;

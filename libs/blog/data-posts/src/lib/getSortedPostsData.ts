@@ -9,11 +9,14 @@ export interface PostData {
   date: string;
 }
 
-export const getSortedPostsData = () => {
+export const getSortedPostsData = (locale: string) => {
   const fileNames = readdirSync(postDirectory);
+
   const allPostsData = fileNames.map(fileName => {
     const id = fileName.replace(/\.md$/, '');
-    const fullPath = path.join(postDirectory, fileName);
+    const allFileNames = readdirSync(path.join(postDirectory, fileName));
+    const contentLocale = allFileNames.map(fileName => fileName.replace(/\.md$/, '')).includes(locale) ? locale : 'en';
+    const fullPath = path.join(postDirectory, fileName, `${contentLocale}.md`);
     const fileContents = readFileSync(fullPath, 'utf-8');
     const matterResult = matter(fileContents);
 
