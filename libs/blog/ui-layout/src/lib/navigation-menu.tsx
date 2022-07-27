@@ -8,7 +8,7 @@ export interface NavigationMenuProps {
 
 export function NavigationMenu({ onLinkClick, routes }: NavigationMenuProps) {
   return (
-    <VStack spacing={3} align='stretch' as='ul'>
+    <VStack spacing={[3, 1]} align='stretch' as='ul'>
       {routes.map(({ emoji, path, label }) => (
         <ChLink key={path} as='li' listStyleType='none' onClick={onLinkClick} p={1}>
           <Box as='span' role='img' mr={2}>

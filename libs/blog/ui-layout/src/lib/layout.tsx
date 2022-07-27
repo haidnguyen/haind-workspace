@@ -44,7 +44,7 @@ export function Layout({ children }: PropsWithChildren) {
 
       <Grid as='section' p={[0, 2]} pt={[4, 2]} gap={4} templateColumns='repeat(10, 1fr)'>
         <GridItem as='nav' colSpan={[0, 3]} display={['none', 'initial']}>
-          sidebar
+          <NavigationMenu routes={routes} onLinkClick={onClose} />
         </GridItem>
         <GridItem colSpan={[10, 7]}>{children}</GridItem>
       </Grid>
