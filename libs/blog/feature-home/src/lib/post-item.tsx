@@ -7,7 +7,22 @@ import { PropsWithChildren } from 'react';
 
 export function PostItem({ title, date, tags, id }: PropsWithChildren<PostData>) {
   return (
-    <Box as='li' listStyleType='none' bgColor='white' p={4} pt={2} mb={3} borderRadius={8}>
+    <Box
+      as='li'
+      listStyleType='none'
+      bgColor='white'
+      p={4}
+      pt={2}
+      mb={3}
+      borderRadius={8}
+      borderColor='gray.200'
+      borderStyle='solid'
+      borderWidth={['none', '1px']}
+      transition='border-color 200ms linear'
+      _hover={{
+        borderColor: 'red.200',
+      }}
+    >
       <Link href={`/posts/${id}`}>
         <CLink fontWeight='bold' fontSize='xl'>
           {title}
