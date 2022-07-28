@@ -1,7 +1,7 @@
-import { readdirSync, readFileSync } from 'fs';
+import { readdir } from 'fs/promises';
 import matter from 'gray-matter';
-import path from 'path';
 import { postDirectory } from './postDirectory';
+import { readFileContent } from './readFileContent';
 
 export interface PostData {
   id: string;
@@ -9,24 +9,21 @@ export interface PostData {
   date: string;
 }
 
-export const getSortedPostsData = (locale: string) => {
-  const fileNames = readdirSync(postDirectory);
+export const getSortedPostsData = async (locale: string) => {
+  const fileNames = await readdir(postDirectory);
 
-  const allPostsData = fileNames.map(fileName => {
-    const id = fileName.replace(/\.md$/, '');
-    const allFileNames = readdirSync(path.join(postDirectory, fileName));
-    const contentLocale = allFileNames.map(fileName => fileName.replace(/\.md$/, '')).includes(locale)
-      ? locale
-      : allFileNames[0].replace(/\.md$/, '');
-    const fullPath = path.join(postDirectory, fileName, `${contentLocale}.md`);
-    const fileContents = readFileSync(fullPath, 'utf-8');
-    const matterResult = matter(fileContents);
+  const allPostsData = await Promise.all(
+    fileNames.map(async fileName => {
+      const id = fileName.replace(/\.md$/, '');
+      const fileContent = await readFileContent(postDirectory, id, locale);
+      const matterResult = matter(fileContent);
 
-    return {
-      id,
-      ...matterResult.data,
-    } as PostData;
-  });
+      return {
+        id,
+        ...matterResult.data,
+      } as PostData;
+    })
+  );
 
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
