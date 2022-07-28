@@ -1,5 +1,6 @@
 import {
   Box,
+  Container,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -28,7 +29,7 @@ export function Layout({ children }: PropsWithChildren) {
 
   return (
     <>
-      <Box as='header'>
+      <Box as='header' borderBottom='1px' borderColor='gray.200' bgColor='white'>
         <Header onMenuClick={onOpen} />
       </Box>
       <Drawer isOpen={isOpen} onClose={onClose}>
@@ -42,14 +43,16 @@ export function Layout({ children }: PropsWithChildren) {
         </DrawerContent>
       </Drawer>
 
-      <Grid as='section' p={[0, 2]} pt={[4, 2]} gap={4} templateColumns='repeat(10, 1fr)'>
-        <GridItem as='nav' colSpan={[0, 3]} display={['none', 'initial']}>
-          <NavigationMenu routes={routes} onLinkClick={onClose} />
-        </GridItem>
-        <GridItem colSpan={[10, 7]}>{children}</GridItem>
-      </Grid>
+      <Container maxW={['full', 'container.xl']} py={4} px={[0, 4]}>
+        <Grid as='section' gap={4} templateColumns='repeat(10, 1fr)'>
+          <GridItem as='nav' colSpan={[0, 2]} display={['none', 'initial']}>
+            <NavigationMenu routes={routes} onLinkClick={onClose} />
+          </GridItem>
+          <GridItem colSpan={[10, 8]}>{children}</GridItem>
+        </Grid>
+      </Container>
 
-      <Box as='footer'>
+      <Box as='footer' display='none'>
         <Footer />
       </Box>
     </>

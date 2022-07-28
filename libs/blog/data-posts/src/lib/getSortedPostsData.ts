@@ -7,6 +7,7 @@ export interface PostData {
   id: string;
   title: string;
   date: string;
+  tags: string[];
 }
 
 export const getSortedPostsData = async (locale: string) => {
