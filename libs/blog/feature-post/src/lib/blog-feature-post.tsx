@@ -13,7 +13,6 @@ export interface BlogFeaturePostProps {
 
 export function BlogFeaturePost({ postData }: BlogFeaturePostProps) {
   const { title } = useTitle();
-  console.log({ postData });
 
   return (
     <Layout>
