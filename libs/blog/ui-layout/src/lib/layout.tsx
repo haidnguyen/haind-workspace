@@ -28,7 +28,16 @@ export function Layout({ children }: PropsWithChildren) {
 
   return (
     <>
-      <Box as='header' borderBottom='1px' borderColor='gray.200' bgColor='white'>
+      <Box
+        as='header'
+        borderBottom='1px'
+        borderColor='gray.200'
+        bgColor='white'
+        position='fixed'
+        w='100%'
+        h='56px'
+        zIndex='1'
+      >
         <Header onMenuClick={onOpen} />
       </Box>
       <Drawer isOpen={isOpen} onClose={onClose}>
@@ -42,7 +51,7 @@ export function Layout({ children }: PropsWithChildren) {
         </DrawerContent>
       </Drawer>
 
-      <Container maxW={['full', 'container.xl']} py={4} px={[0, 4]}>
+      <Container maxW={['full', 'container.xl']} py={4} px={[0, 4]} position='relative' top='56px'>
         <Grid as='section' gap={4} templateColumns='repeat(10, 1fr)'>
           <GridItem as='nav' colSpan={[0, 2]} display={['none', 'initial']}>
             <NavigationMenu routes={routes} onLinkClick={onClose} />
