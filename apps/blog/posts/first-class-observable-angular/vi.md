@@ -291,6 +291,6 @@ Sau đó thay vì đống get, set trên thì chỉ cần
 @Input('count') count$: Observable<number>;
 ```
 
-Cơ bản ý tưởng chỉ có vậy, nếu bạn thích `rxjs` như mình và thích dùng nó nhiều nhất có thể thì đây là một hướng đi mà bạn có thể cân nhắc. Nếu `rxjs` là lý do bạn code Angular như mình thì còn chờ gì nữa mà không lên github cho `rxjs` một star sẵn tiện unstar Angular luôn 😬
+Cơ bản ý tưởng chỉ có vậy, nếu bạn thích `rxjs` như mình và thích dùng nó nhiều nhất có thể thì đây là một hướng đi mà bạn có thể cân nhắc. Nếu `rxjs` là lý do bạn code Angular như mình thì còn chờ gì nữa mà không lên github cho `rxjs` một star.
 
 #### Hy vọng bạn thấy bài viết này bổ ích 💕
