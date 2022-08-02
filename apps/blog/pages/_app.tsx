@@ -26,7 +26,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <ChakraProvider>
         <IntlProvider messages={messages[lang]} defaultLocale='en' locale={lang}>
           <TitleProvider title={title}>
-            <Box as='main' bgColor='blackAlpha.100' minH='100vh'>
+            <Box as='main'>
               <Component {...pageProps} />
             </Box>
           </TitleProvider>
