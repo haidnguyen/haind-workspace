@@ -11,7 +11,7 @@ Routing chắc là cái basic nhất khi xây dựng React app rồi, nhưng b�
 
 Thường thì mọi người hay dùng `react-router` trong React, phần code router thì nó sẽ như vầy
 
-```typescript
+```tsx
 const App: VFC = () => {
   return (
     <Switch>
@@ -48,7 +48,7 @@ Thay vì đoạn code ở đầu, chúng ta sẽ tạo một reuseable router co
 
 RouterOutlet.tsx
 
-```typescript
+```tsx
 import React, { FC, Suspense } from 'react';
 import { Switch, Route, RouteProps } from 'react-router-dom';
 
@@ -78,7 +78,7 @@ export const RouterOutlet: FC<RouterOutletProps> = ({ baseUrl, routes, fallback 
 Ở đây mình dùng thêm React Suspense nữa, nếu không muốn thì có thể bỏ đi nhé!
 
 Từ đây thay vì đoạn code lúc đầu chúng ta có thể dùng thế này.
-```typescript
+```tsx
 const routes: RouteConfig = [
   {
     path: '/users',
@@ -105,7 +105,7 @@ Nếu như project của bạn đang chia theo feature base thì trong mỗi fol
 
 features/user/UserFeatureRouter.tsx
 
-```typescript
+```tsx
   const routes: RouteConfig = [
     {
     path: '/list',
@@ -124,7 +124,7 @@ features/user/UserFeatureRouter.tsx
 
 Sau đó bạn có thể sử dụng cái router này trong features/user/index.tsx
 
-```typescript
+```tsx
 export const UserFeature = () => {
   return (
     <div>

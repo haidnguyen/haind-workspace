@@ -451,7 +451,7 @@ Về cơ bản thì trong angular chúng ta có thể phần chia code thành c�
 
 Structure đề nghị sẽ như thế này
 
-```bash
+```typescript
 .
 ├── app
 │   ├── app-routing.module.ts
