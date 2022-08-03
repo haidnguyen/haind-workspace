@@ -9,6 +9,7 @@ export interface PostDetail {
   tags: string[];
   contentHtml: string;
   content: string;
+  featuredImage: string;
 }
 
 export const getPostData = async (id: string, locale: string) => {

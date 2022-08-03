@@ -2,6 +2,7 @@
 date: "2020-08-06"
 title: "Một chút ngẫu hứng với Angular - First Class Observable Pattern"
 tags: ['typescript','rxjs','angular']
+featuredImage: /featured-images/first-class-observable-angular/rxjs-featured.png
 ---
 
 Reactive eXtensions for JavaScript là vũ khí tối thượng với bất kỳ ai code JavaScript đặc biệt là những ai đau khổ với Angular như mình. Trong những ngày tháng đó thì mình cũng tìm ra một cách để enjoy Angular đó là dùng RxJS cho mọi thứ biến bản thân thành một Pure Reactive Programmer. Bài viết này sẽ viết về cách mình sử dụng rxjs cho phần lớn các trường hợp thường gặp phải khi làm việc với Angular, cái mà mình tự gọi là `First Class Observable Pattern`.

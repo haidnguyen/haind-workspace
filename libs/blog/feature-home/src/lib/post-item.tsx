@@ -33,7 +33,7 @@ export function PostItem({ title, date, tags, id, langs }: PropsWithChildren<Pos
         </Link>
         <HStack spacing={2}>
           {langs?.map(lang => (
-            <Link href={`/posts/${id}`} locale={lang}>
+            <Link href={`/posts/${id}`} locale={lang} key={lang}>
               <Tag key={lang} colorScheme='red'>
                 <CLink>{lang.toUpperCase()}</CLink>
               </Tag>
