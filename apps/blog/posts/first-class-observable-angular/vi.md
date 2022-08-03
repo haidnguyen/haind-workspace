@@ -6,11 +6,11 @@ tags: ['typescript','rxjs','angular']
 
 Reactive eXtensions for JavaScript là vũ khí tối thượng với bất kỳ ai code JavaScript đặc biệt là những ai đau khổ với Angular như mình. Trong những ngày tháng đó thì mình cũng tìm ra một cách để enjoy Angular đó là dùng RxJS cho mọi thứ biến bản thân thành một Pure Reactive Programmer. Bài viết này sẽ viết về cách mình sử dụng rxjs cho phần lớn các trường hợp thường gặp phải khi làm việc với Angular, cái mà mình tự gọi là `First Class Observable Pattern`.
 
-⚠️ **Một số thuật ngữ dùng trong này đều không chính thức và có thể không chính xác về mặt học thuật.**
+**⚠️ Một số thuật ngữ dùng trong này đều không chính thức và có thể không chính xác về mặt học thuật.**
 
 Ý tưởng chính ở đây là dùng `Observable` cho tất cả mọi thứ. Dữ liệu, event, side effect,... tất cả đều được thể hiện dưới dạng `Observable`. Mục đích của việc này là tất cả mọi thứ đều là stream thì có thể sử dụng các operator của `RxJS` để thực hiện các logic trong code. Điều này rất cần thiết khi cần làm những thứ như là input và một input thì giá trị ở input khác cũng phải đổi theo và có thể trong đó còn vài yếu tố khác ảnh hưởng tới luồng thay đổi đó.
 
-#### Observable - Vũ khí tối thượng
+## Observable - Vũ khí tối thượng
 
 Ví dụ bạn có có 2 biến `x` và `y` là `number`. Nếu bạn muốn `z` = `x` + `y` thì bạn sẽ làm như thế nào?
 
@@ -48,7 +48,7 @@ Nhưng mà khó khăn một cái là bây giờ muốn dùng cái gì thì trư�
 
 Quay lại với code thì mình muốn bỏ tất cả mọi thứ từ data đến logic vào trong `Observable` và dùng các operator mà `rxjs` cung cấp để thao tác trên những `Observable` đó. Với số lượng `operator` cực khủng mà `rxjs` cung cấp thì điều này vô cùng khả thi. Ví dụ trên là cộng 2 số trong thế giới của `Observable` đó.
 
-#### Một số ví dụ để làm quen
+## Một số ví dụ để làm quen
 
 `Reactive Programming` hay hẹp hơn là `rxjs` không phải quá khó để dùng, mọi thứ bạn làm được với cách code thông thường bạn đều có thể làm được điều tương tự với các operator của `rxjs`. Phần này mình sẽ đưa ra một số ví dụ để những ai mới biết đến `rxjs` có thể làm quen với cách suy nghĩ **Everything is stream** nhé.
 
@@ -170,7 +170,7 @@ itemType$.next('FRUIT'); // input (đang là t từ lần nhập trước): sau 
 
 Trên đây là một số ví dụ sử dụng `rxjs` để thực hiện một số việc, về cơ bản bất cứ thứ gì bạn cũng có thể nhét nó vào trong 1 `Observable` và nếu tất cả mọi thứ đều là `Observable` thì tất cả những logic, những tính toán mà bạn thực hiện hằng ngày đều sẽ là sự kết hợp của các observable và các operator.
 
-#### Angular First Class Observable
+## Angular First Class Observable
 
 Nếu như bạn có thể thay đổi mindset theo hướng `Reactive Programming`, biến đổi tất cả mọi thứ có trong một component thành dạng `Observable` thì đó chính là pattern mà mính gọi là `Angular First Class Observable`. Nghe có vẻ mơ hồ nên mình sẽ đưa ra một số nguyên tắc sau:
 
@@ -248,7 +248,7 @@ Component Counter trong ví dụ trên sẽ hiện một số tăng liên tục 
 
 Nói dông dài thì `Angular First Class Observable`, ví dụ trên có lẽ là đủ để các bạn có được ý tưởng để chuyển mọi thứ trong một component thành `Observable`. Tuy nhiên chắc nhiều bạn sẽ thấy rằng quá nhiều boilerplate code. Chúng ta có thể sử dụng `decorator` cải thiện việc này.
 
-#### ObservableBinding Decorator
+## ObservableBinding Decorator
 
 Trong ví dụ thì `Input` nào các bạn cũng có thể dùng cách này để thực hiện chuyển thành observable. Vậy để đỡ phải code lặp đi lặp lại thì hãy tạo một decorator cho việc này.
 
@@ -293,4 +293,4 @@ Sau đó thay vì đống get, set trên thì chỉ cần
 
 Cơ bản ý tưởng chỉ có vậy, nếu bạn thích `rxjs` như mình và thích dùng nó nhiều nhất có thể thì đây là một hướng đi mà bạn có thể cân nhắc. Nếu `rxjs` là lý do bạn code Angular như mình thì còn chờ gì nữa mà không lên github cho `rxjs` một star.
 
-#### Hy vọng bạn thấy bài viết này bổ ích 💕
+_Hy vọng bạn thấy bài viết này bổ ích 💕_

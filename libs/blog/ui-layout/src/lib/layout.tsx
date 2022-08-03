@@ -51,21 +51,16 @@ export function Layout({ children }: PropsWithChildren) {
         </DrawerContent>
       </Drawer>
 
-      <Container
-        maxW={['full', 'container.xl']}
-        py={4}
-        px={[0, 4]}
-        position='relative'
-        top='56px'
-        bgColor='blackAlpha.100'
-      >
-        <Grid as='section' gap={4} templateColumns='repeat(10, 1fr)' minHeight='100vh'>
-          <GridItem as='nav' colSpan={[0, 2]} display={['none', 'initial']}>
-            <NavigationMenu routes={routes} onLinkClick={onClose} />
-          </GridItem>
-          <GridItem colSpan={[10, 8]}>{children}</GridItem>
-        </Grid>
-      </Container>
+      <Box py={4} px={[0, 4]} position='relative' top='56px' bgColor='blackAlpha.100' maxW='100%'>
+        <Container maxW={['full', 'container.xl']}>
+          <Grid as='section' gap={4} templateColumns='repeat(10, 1fr)' minHeight='100vh'>
+            <GridItem as='nav' colSpan={[0, 2]} display={['none', 'initial']}>
+              <NavigationMenu routes={routes} onLinkClick={onClose} />
+            </GridItem>
+            <GridItem colSpan={[10, 8]}>{children}</GridItem>
+          </Grid>
+        </Container>
+      </Box>
 
       <Box as='footer' display='none'>
         <Footer />
