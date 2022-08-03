@@ -11,8 +11,8 @@ export function BlogFeatureHome({ allPostsData }: BlogFeatureHomeProps) {
   return (
     <Layout>
       <Box as='ul'>
-        {allPostsData.map(({ id, date, tags, title }) => (
-          <PostItem key={id} id={id} date={date} tags={tags} title={title} />
+        {allPostsData.map(({ id, date, tags, title, langs }) => (
+          <PostItem key={id} id={id} date={date} tags={tags} title={title} langs={langs} />
         ))}
       </Box>
     </Layout>

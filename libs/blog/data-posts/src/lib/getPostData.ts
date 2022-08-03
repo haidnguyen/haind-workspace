@@ -12,7 +12,7 @@ export interface PostDetail {
 }
 
 export const getPostData = async (id: string, locale: string) => {
-  const fileContent = await readFileContent(postDirectory, id, locale);
+  const [fileContent] = await readFileContent(postDirectory, id, locale);
   const matterResult = matter(fileContent);
 
   return {

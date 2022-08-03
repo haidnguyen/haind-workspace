@@ -8,5 +8,5 @@ export const readFileContent = async (diretory: string, name: string, locale: st
     ? locale
     : fileNames[0].replace(/\.md$/, '');
   const filePath = path.join(diretory, name, `${pathLocale}.md`);
-  return await readFile(filePath, 'utf-8');
+  return [await readFile(filePath, 'utf-8'), fileNames.map(fileName => fileName.replace(/\.md$/, ''))] as const;
 };

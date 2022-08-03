@@ -8,6 +8,7 @@ export interface PostData {
   title: string;
   date: string;
   tags: string[];
+  langs: string[];
 }
 
 export const getSortedPostsData = async (locale: string) => {
@@ -16,12 +17,14 @@ export const getSortedPostsData = async (locale: string) => {
   const allPostsData = await Promise.all(
     fileNames.map(async fileName => {
       const id = fileName.replace(/\.md$/, '');
-      const fileContent = await readFileContent(postDirectory, id, locale);
+      const [fileContent, availableLangs] = await readFileContent(postDirectory, id, locale);
       const matterResult = matter(fileContent);
+      console.log({ availableLangs });
 
       return {
         id,
         ...matterResult.data,
+        langs: availableLangs,
       } as PostData;
     })
   );
