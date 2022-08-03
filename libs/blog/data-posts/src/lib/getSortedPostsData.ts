@@ -19,7 +19,6 @@ export const getSortedPostsData = async (locale: string) => {
       const id = fileName.replace(/\.md$/, '');
       const [fileContent, availableLangs] = await readFileContent(postDirectory, id, locale);
       const matterResult = matter(fileContent);
-      console.log({ availableLangs });
 
       return {
         id,
