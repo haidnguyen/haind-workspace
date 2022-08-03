@@ -1,11 +1,8 @@
 ---
-path: "/setup-gatsby-with-typescript-tailwind-unit-test"
 date: "2020-07-25"
 title: "Cách dựng một trang blog với GatsbyJS + Typescript + TailwindCSS"
-tags: "TYPESCRIPT,REACT,CSS"
-duration: 12
-featuredImage: ../images/setup-gatsby-typescript-tailwind/gatsby-featured.png
-category: PROGRAMMING
+tags: ['typescript', 'react', 'css']
+featuredImage: /featured-images/setup-gatsby-typescript-tailwind/gatsby-featured.png
 ---
 
 *GatsbyJS* là một framework dựa trên ReactJS vàn GraphQL, phù hợp để xây dựng những ứng dụng web một cách nhanh cùng với hiệu năng vượt trội. Bài viết này sẽ nói về cách mình setup một project `GatsbyJS`. Cụ thể là một template `GatsbyJS` sử dụng `Typescript`, `TailwindCSS (PostCSS)` và `Unit Testing`.

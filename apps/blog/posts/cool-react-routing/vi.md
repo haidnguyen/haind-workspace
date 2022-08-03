@@ -1,11 +1,8 @@
 ---
-path: "/cool-react-routing.md"
 date: "2021-02-21"
 title: "Routing trong React sao cho ngầu"
-tags: "REACT,TYPESCRIPT"
-duration: 5
-featuredImage: ../images/cool-react-routing/featured.png
-category: PROGRAMMING
+tags: ['react', 'typescript']
+featuredImage: /featured-images/cool-react-routing/featured.png
 ---
 
 Routing chắc là cái basic nhất khi xây dựng React app rồi, nhưng bạn đã làm nó thật sự hay? 

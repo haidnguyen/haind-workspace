@@ -1,16 +1,13 @@
 ---
-path: "/setup-wsl2-for-web-development"
 date: "2020-07-21"
 title: "Thiết lập môi trường lập trình trong WSL2"
-tags: "ELSE,NODEJS"
-duration: 8
-featuredImage: ../images/setup-wsl2/wsl-featured.jpg
-category: PROGRAMMING
+tags: ['nodejs', 'else']
+featuredImage: /featured-images/setup-wsl2/wsl-featured.jpg
 ---
 
 Windows Subsystem for Linux aka WSL là một tính năng khá ngon của windows đặc biệt là với những ai theo con đường cào phím chuyên nghiệp. Với những ai hay giành thời gian rảnh để code linh tinh này nọ thì thay vì phải cài tùm lum các thứ lên con máy Windows thân yêu mà bạn mua về chủ yếu là để chơi game (công việc thì công ty có phát máy mà), bạn sẽ có mốt cái máy ảo để chỉ cài tất cả những thứ liên quan tới việc code. Khi nào có hứng code thì chỉ cần 1 câu lệnh command line là được, code chán thì cũng 1 dòng lệnh để tắt rồi vô game tấu hài.
 
-<br>
+
 
 #### Để có cơ hội thành công khi làm theo hướng dẫn này bạn cần chuẩn bị:
 
@@ -20,7 +17,7 @@ Windows Subsystem for Linux aka WSL là một tính năng khá ngon của window
 
 #### Bắt đầu nhé
 
-<br>
+
 
 Đầu tiên là cài Windows Subsystem for Linux, mở **PowerShell as Administrator**
 
@@ -42,19 +39,19 @@ wsl --set-default-version 2
 
 Nếu lúc này bạn gặp lỗi `WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel` thì vô cái link đó download WSL2 Linux kernel về cài vô.
 
-<br>
+
 
 Xong bây giờ vô [Microsoft Store](https://aka.ms/wslstore) để tải về distro Linux muốn dùng, nếu không biết chọn cái nào thì cứ **Ubuntu** mà tán nhé.
 
-<br>
+
 
 Nãy giờ là phần hướng dẫn cửa Microsoft chứ không có gì đặc biệt đâu nếu bạn gặp khó khăn chỗ nào thì vô link gốc để làm theo nhé https://docs.microsoft.com/vi-vn/windows/wsl/install-win10
 
-<br>
+
 
 #### Cài đặt những thứ cần thiết để làm việc trên linux
 
-<br>
+
 
 Trước hết
 
@@ -113,19 +110,19 @@ Chạy lện này nữa là xong cho zsh
 source .zshrc
 ```
 
-<br>
+
 
 Show thành quả nè
 
-<br>
 
-![Zsh](../images/setup-wsl2/wsl-1.png)
 
-<br>
+![Zsh](/featured-images/setup-wsl2/wsl-1.png)
+
+
 
 Bây giờ tới `Node.js` 
 
-<br>
+
 
 Đầu tiên các bạn vào link này: https://nodejs.org/en/download/package-manager/
 
@@ -135,7 +132,7 @@ Click vào link `Node.js binary distributions` bạn sẽ đi tới link này ht
 
 Làm theo hướng dẫn (copy với chạy mấy dòng lệnh ứng với phiên bản muốn cài là được).
 
-<br>
+
 
 Ví dụ mình sẽ dùng lệnh dưới để cái Node.js 14. Một điều mình thích ở Linux là bạn có thể copy và paste mấy dòng lệnh mà ai đó chỉ trên mạng và tự nhiên bạn sẽ có điều bạn cần 😂
 
@@ -167,7 +164,7 @@ mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 ```
 
-<br>
+
 
 Về cơ bản cách cài một thứ vào Linux là vậy, cứ google rồi copy và paste mấy câu command line nó chỉ vô là được 😱
 
@@ -196,7 +193,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 ```
 Tốt nhất bạn nên copy đúng đoạn code bạn nhận được khi cài xong nvm
 
-<br>
+
 
 Thêm vô file `.zshrc` xong thì
 ```shell
@@ -208,18 +205,18 @@ Thử coi đã thành công hay chưa
 nvm ls
 ```
 
-<br>
+
 
 Cuối cùng là `Visual Studio Code`. Nếu bạn dùng editor khác thì cứ bỏ qua cái này nhé. 
 
 Để cài VSCode thì bạn chỉ cần download và cài nó lên Windows như bình thường sau đó cài 1 cái extension là `Remote - WSL` cho VSCode là bạn có thể gõ `code .` ở bất cứ thư mục nào để khởi động VSCode tử trong subsystem Linux của bạn. Quá dễ phải không 😜
 
-<br>
+
 
 Để ý góc trái nhé
-![VSCode](../images/setup-wsl2/wsl-2.png)
+![VSCode](/featured-images/setup-wsl2/wsl-2.png)
 
-<br>
+
 
 #### Những thứ hay ho khác
 
@@ -239,6 +236,6 @@ wsl --shutdown
 gbda
 ```
 
-<br>
+
 
 #### Vậy là hết rồi, hy vọng bạn có được vài thứ bổ ích sau khi đọc bài viết này 💕

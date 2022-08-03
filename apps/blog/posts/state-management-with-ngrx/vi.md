@@ -1,11 +1,8 @@
 ---
-path: "/state-management-with-ngrx-in-angular"
 date: "2020-09-28"
 title: "State Management Trong Angular Với NgRx"
-tags: "TYPESCRIPT,ANGULAR,RXJS"
-duration: 15
-featuredImage: ../images/state-management-with-ngrx/ngrx-featured.png
-category: PROGRAMMING
+tags: ['typescript', 'angular', 'rxjs']
+featuredImage: /featured-images/state-management-with-ngrx/ngrx-featured.png
 ---
 
 State Management hay quản lý state là một khái niệm khá phổ biến ở React và Angular cũng đã có một sự giao lưu tuyệt vời với nó qua NgRx - Reactive State for Angular. Bài viết này mình sẽ chia sẽ về cách tổ chức state của mình khi sử dụng NgRx.
@@ -116,7 +113,7 @@ export function reducer(state: AuthState | undefined, action: Action) {
   return _authReducer(state, action);
 }
 ```
-<br>
+
 
 ## store/auth/auth.action.ts
 ```typescript
@@ -130,7 +127,7 @@ export const loginSuccess = createAction(
 );
 export const loginFailure = createAction('[Auth] Login__FAILURE', props<{ error: string }>());
 ```
-<br>
+
 
 ## store/auth/auth.selector.ts
 ```typescript
@@ -148,7 +145,7 @@ export const selectIsLoggedIn = createSelector(
   (token, loading) => !!token && !loading,
 );
 ```
-<br>
+
 
 ## store/auth/auth.effect.ts
 ```typescript
@@ -193,7 +190,7 @@ export class AuthEffects {
   ) {}
 }
 ```
-<br>
+
 
 ## store/auth/auth.module.ts
 ```typescript
@@ -213,7 +210,7 @@ import { AuthEffects } from './auth.effect';
 })
 export class AuthFeatureStoreModule {}
 ```
-<br>
+
 
 ## store/auth/index.ts
 ```typescript
@@ -234,7 +231,7 @@ export interface State {
 
 export { fromPost, fromAuth };
 ```
-<br>
+
 
 ## store/store.module.ts
 ```typescript
@@ -300,7 +297,7 @@ export function reducer(state: PostEntityState | undefined, action: Action) {
   return _postReducer(state, action);
 }
 ```
-<br>
+
 
 ## store/post/post.action.ts
 ```typescript
@@ -312,7 +309,7 @@ export const selectPost = createAction('[Post] Select Post', props<{ id: number 
 
 export const loadPosts = createAction('[Post] Load Posts', props<{ posts: Post[] }>());
 ```
-<br>
+
 
 ## store/post/post.selector.ts
 ```typescript
@@ -334,7 +331,7 @@ export const selectCurrentPost = createSelector(
   (postEntities, postId) => postEntities[postId],
 );
 ```
-<br>
+
 
 ## store/post/post.effect.ts
 ```typescript
@@ -358,7 +355,7 @@ export class PostEffects {
   constructor(private action$: Actions, private postService: PostService) {}
 }
 ```
-<br>
+
 
 ## store/post/post.module.ts
 
@@ -380,7 +377,7 @@ import { POST_FEATURE_KEY, reducer } from './post.reducer';
 })
 export class PostFeatureStoreModule {}
 ```
-<br>
+
 
 ## store/post/index.ts
 ```typescript
@@ -390,7 +387,7 @@ export * from './post.effect';
 export * from './post.selector';
 export * from './post.module';
 ```
-<br>
+
 
 ##store/reducer.ts
 ```typescript
@@ -405,7 +402,7 @@ export interface State {
 export { fromPost, fromAuth };
 
 ```
-<br>
+
 
 ## store/store.module.ts
 ```typescript
@@ -439,7 +436,7 @@ import { PostFeatureStoreModule } from './entities/post';
 })
 export class AppStoreModule {}
 ```
-<br>
+
 
 
 # Sử dụng @ngrx/component-store cho local state
