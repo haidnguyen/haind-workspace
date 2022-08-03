@@ -1,6 +1,5 @@
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import { TitleProvider } from '@haind-workspace/blog/data-title';
-import dayjs from 'dayjs';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
