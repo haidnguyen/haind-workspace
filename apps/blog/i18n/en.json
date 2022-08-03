@@ -1,4 +1,4 @@
 {
   "blog": "Blog",
-  "posted on": "Posted on {ts, date, long}"
+  "posted on": "Posted on {ts, date, full}"
 }

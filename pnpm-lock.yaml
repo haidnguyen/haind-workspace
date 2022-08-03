@@ -28,7 +28,6 @@ specifiers:
   babel-jest: 27.5.1
   core-js: ^3.6.5
   cypress: ^9.1.0
-  dayjs: ^1.11.4
   eslint: ~8.15.0
   eslint-config-next: 12.1.6
   eslint-config-prettier: 8.1.0
@@ -63,7 +62,6 @@ dependencies:
   '@emotion/styled': 11.9.3_toiz7tndcw4z2b7gxmmeo5fkcu
   '@nrwl/next': 14.4.2_524v34lzpu6j6etbpg3ucdibdu
   core-js: 3.23.4
-  dayjs: 1.11.4
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   gray-matter: 4.0.3
   next: 12.1.6_beenoklgwfttvph5dgxj7na7aq

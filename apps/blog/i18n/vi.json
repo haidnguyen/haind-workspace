@@ -1,5 +1,5 @@
 {
   "blog": "Blog",
-  "posted on": "Đăng ngày {ts, date, long}"
+  "posted on": "{ts, date, full}"
 
 }
