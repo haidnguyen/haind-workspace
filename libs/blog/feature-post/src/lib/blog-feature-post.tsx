@@ -44,9 +44,18 @@ export function BlogFeaturePost({ postData }: BlogFeaturePostProps) {
                 {...props}
               />
             ) : (
-              <code className={className} {...props}>
+              <Text
+                className={className}
+                {...props}
+                as='code'
+                borderRadius='md'
+                bgColor='gray.200'
+                px={2}
+                py={1}
+                fontWeight='semibold'
+              >
                 {children}
-              </code>
+              </Text>
             );
           },
           p: ({ children }) => (
