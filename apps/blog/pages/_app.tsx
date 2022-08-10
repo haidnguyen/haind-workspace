@@ -4,6 +4,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
+import '@fontsource/montserrat';
 import en from '../i18n/en.json';
 import vi from '../i18n/vi.json';
 

@@ -7,6 +7,7 @@ specifiers:
   '@emotion/react': 11.9.3
   '@emotion/server': 11.4.0
   '@emotion/styled': 11.9.3
+  '@fontsource/montserrat': ^4.5.12
   '@nrwl/cli': 14.4.2
   '@nrwl/cypress': 14.4.2
   '@nrwl/eslint-plugin-nx': 14.4.2
@@ -44,6 +45,7 @@ specifiers:
   prettier: ^2.6.2
   react: 18.2.0
   react-dom: 18.2.0
+  react-feather: ^2.0.10
   react-intl: ^6.0.5
   react-markdown: ^8.0.3
   react-syntax-highlighter: ^15.5.0
@@ -60,13 +62,15 @@ dependencies:
   '@emotion/react': 11.9.3_4jaruczdv2uxjj3lb2xbkiuci4
   '@emotion/server': 11.4.0
   '@emotion/styled': 11.9.3_toiz7tndcw4z2b7gxmmeo5fkcu
-  '@nrwl/next': 14.4.2_524v34lzpu6j6etbpg3ucdibdu
+  '@fontsource/montserrat': 4.5.12
+  '@nrwl/next': 14.4.2_bxv2kjsx7x5yvlarfg2herormq
   core-js: 3.23.4
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   gray-matter: 4.0.3
   next: 12.1.6_beenoklgwfttvph5dgxj7na7aq
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-feather: 2.0.10_react@18.2.0
   react-intl: 6.0.5_qtbnez4q7bzoc4eqybg3efzzxe
   react-markdown: 8.0.3_luyos4mouogwq6z3wafb3re4ce
   react-syntax-highlighter: 15.5.0_react@18.2.0
@@ -2348,6 +2352,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@fontsource/montserrat/4.5.12:
+    resolution: {integrity: sha512-UQ+4ijm1sddIBtmEZ9bKgCB1rSi4Imog0YKz7wDLtMQ3Mw2ZaBseTgoLDfbWnfdowS0PLp+Z4T2KZ/1AySTlDQ==}
+    dev: false
+
   /@formatjs/ecma402-abstract/1.11.8:
     resolution: {integrity: sha512-fgLqyWlwmTEuqV/TSLEL/t9JOmHNLFvCdgzXB0jc2w+WOItPCOJ1T0eyN6fQBQKRPfSqqNlu+kWj7ijcOVTVVQ==}
     dependencies:
@@ -3171,7 +3179,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@nrwl/next/14.4.2_524v34lzpu6j6etbpg3ucdibdu:
+  /@nrwl/next/14.4.2_bxv2kjsx7x5yvlarfg2herormq:
     resolution: {integrity: sha512-T8F8Fy7jJ7dNhLET14FhslD9lGzpUrzOQQfES5mb8LK0Y3kNyumGfCetAuFwkUEp/7aC5FxsZSc/32l4b6dxZA==}
     peerDependencies:
       next: ^12.1.0
@@ -3192,6 +3200,7 @@ packages:
       ts-node: 10.8.2_t4lrjbt3sxauai4t5o275zsepa
       tsconfig-paths: 3.14.1
       url-loader: 4.1.1_webpack@5.73.0
+      webpack: 5.73.0
       webpack-merge: 5.8.0
     transitivePeerDependencies:
       - '@babel/core'
@@ -3228,7 +3237,6 @@ packages:
       - uglify-js
       - utf-8-validate
       - vue-template-compiler
-      - webpack
       - webpack-cli
       - webpack-dev-server
       - webpack-hot-middleware
@@ -9954,6 +9962,15 @@ packages:
 
   /react-fast-compare/3.2.0:
     resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
+    dev: false
+
+  /react-feather/2.0.10_react@18.2.0:
+    resolution: {integrity: sha512-BLhukwJ+Z92Nmdcs+EMw6dy1Z/VLiJTzEQACDUEnWMClhYnFykJCGWQx+NmwP/qQHGX/5CzQ+TGi8ofg2+HzVQ==}
+    peerDependencies:
+      react: '>=16.8.6'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
     dev: false
 
   /react-focus-lock/2.9.1_luyos4mouogwq6z3wafb3re4ce:
