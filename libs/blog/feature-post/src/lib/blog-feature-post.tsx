@@ -2,7 +2,6 @@ import { Box, Text } from '@chakra-ui/react';
 import { PostDetail } from '@haind-workspace/blog/data-posts';
 import { useTitle } from '@haind-workspace/blog/data-title';
 import { Layout } from '@haind-workspace/blog/ui-layout';
-import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Markdown } from './markdown';
@@ -18,14 +17,13 @@ export function BlogFeaturePost({ postData }: BlogFeaturePostProps) {
     <>
       <Head>
         <title>
-          {postData.title} | ${title}
+          {postData.title} | {title}
         </title>
         <meta name='description' content={description} />
         <meta name='og:title' content={postData.title} />
         <meta name='og:description' content={description} />
         <meta name='og:url' content={siteUrl} />
         <meta name='og:type' content='website' />
-        <meta name='og:image' content={`${siteUrl}${postData.featuredImage}`} />
       </Head>
 
       <Layout>

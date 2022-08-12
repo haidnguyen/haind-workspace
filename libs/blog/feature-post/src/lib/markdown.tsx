@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { Text } from '@chakra-ui/react';
-import { synthwave84 } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import synthwave84 from 'react-syntax-highlighter/dist/cjs/styles/prism/synthwave84';
 
 interface MarkdownProps {
   content: string;

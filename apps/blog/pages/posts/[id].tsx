@@ -1,7 +1,7 @@
 import { AllPostIds, getAllPostIds, getPostData } from '@haind-workspace/blog/data-posts';
-import dynamic from 'next/dynamic';
+import { BlogFeaturePost } from '@haind-workspace/blog/feature-post';
 
-export default dynamic(() => import('@haind-workspace/blog/feature-post').then(m => m.BlogFeaturePost), { ssr: false });
+export default BlogFeaturePost;
 
 export async function getStaticPaths({ locales }) {
   const paths = getAllPostIds(locales);

@@ -1,7 +1,7 @@
 import { getSortedPostsData } from '@haind-workspace/blog/data-posts';
-import dynamic from 'next/dynamic';
+import { BlogFeatureHome } from '@haind-workspace/blog/feature-home';
 
-export default dynamic(() => import('@haind-workspace/blog/feature-home').then(m => m.BlogFeatureHome), { ssr: false });
+export default BlogFeatureHome;
 
 export async function getStaticProps({ locale }) {
   const allPostsData = await getSortedPostsData(locale);
