@@ -41,6 +41,7 @@ specifiers:
   gray-matter: ^4.0.3
   jest: 27.5.1
   next: 12.1.6
+  next-seo: ^5.5.0
   nx: 14.4.2
   prettier: ^2.6.2
   react: 18.2.0
@@ -68,6 +69,7 @@ dependencies:
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   gray-matter: 4.0.3
   next: 12.1.6_beenoklgwfttvph5dgxj7na7aq
+  next-seo: 5.5.0_2nrpme5s5xmpdgccbbbdwhosda
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-feather: 2.0.10_react@18.2.0
@@ -8897,6 +8899,18 @@ packages:
 
   /neo-async/2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+
+  /next-seo/5.5.0_2nrpme5s5xmpdgccbbbdwhosda:
+    resolution: {integrity: sha512-5ouBHFtx8YrSDW44lj0qIEQ+oMcz6stgoITB+SqHUZbhgizoJsyLmq73gJ0lxtEKpcN8vG2QgRIJfdb8OAPChw==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 12.1.6_beenoklgwfttvph5dgxj7na7aq
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /next/12.1.6_beenoklgwfttvph5dgxj7na7aq:
     resolution: {integrity: sha512-cebwKxL3/DhNKfg9tPZDQmbRKjueqykHHbgaoG4VBRH3AHQJ2HO0dbKFiS1hPhe1/qgc2d/hFeadsbPicmLD+A==}

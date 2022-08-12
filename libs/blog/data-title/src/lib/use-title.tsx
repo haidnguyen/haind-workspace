@@ -1,13 +1,17 @@
 import { createContext, PropsWithChildren, useContext } from 'react';
 
-const TitleContext = createContext<string | undefined>(undefined);
-
 interface TitleProviderProps {
   title: string;
+  description: string;
+  siteUrl: string;
+  author: string;
+  keywords: string[];
 }
 
-export function TitleProvider({ children, title }: PropsWithChildren<TitleProviderProps>) {
-  return <TitleContext.Provider value={title}>{children}</TitleContext.Provider>;
+const TitleContext = createContext<TitleProviderProps | undefined>(undefined);
+
+export function TitleProvider({ children, ...rest }: PropsWithChildren<TitleProviderProps>) {
+  return <TitleContext.Provider value={rest}>{children}</TitleContext.Provider>;
 }
 
 export function useTitle() {
@@ -16,5 +20,5 @@ export function useTitle() {
   if (context === undefined) {
     throw new Error('useTitle must be used withina TitleProvider');
   }
-  return { title: context };
+  return context;
 }
