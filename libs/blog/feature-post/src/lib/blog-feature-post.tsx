@@ -16,25 +16,18 @@ export function BlogFeaturePost({ postData }: BlogFeaturePostProps) {
 
   return (
     <>
-      <NextSeo
-        title={postData.title}
-        description={description}
-        titleTemplate={` %s | ${title}`}
-        openGraph={{
-          title: postData.title,
-          description,
-          url: siteUrl,
-          type: 'article',
-          images: [
-            {
-              url: postData.featuredImage,
-              alt: 'Featured Image',
-              height: 400,
-              width: 250,
-            },
-          ],
-        }}
-      />
+      <Head>
+        <title>
+          {postData.title} | ${title}
+        </title>
+        <meta name='description' content={description} />
+        <meta name='og:title' content={postData.title} />
+        <meta name='og:description' content={description} />
+        <meta name='og:url' content={siteUrl} />
+        <meta name='og:type' content='website' />
+        <meta name='og:image' content={`${siteUrl}${postData.featuredImage}`} />
+      </Head>
+
       <Layout>
         <Box w='100%' height={['250px', '400px']} pos='relative' mb={[2, 8]}>
           <Image src={postData.featuredImage} layout='fill' objectFit='contain' />
