@@ -10,17 +10,16 @@ interface BlogFeatureHomeProps {
 }
 
 export function BlogFeatureHome({ allPostsData }: BlogFeatureHomeProps) {
-  const { title, description, siteUrl } = useTitle();
+  const { title, description } = useTitle();
 
   return (
     <>
       <Head>
         <title>Home Page | {title}</title>
-        <meta name='description' content={description} />
-        <meta name='og:title' content='Home Page' />
-        <meta name='og:description' content={description} />
-        <meta name='og:url' content={siteUrl} />
-        <meta name='og:type' content='website' />
+        <meta property='description' content={description} />
+        <meta property='og:title' content='Home Page' />
+        <meta property='og:description' content={description} />
+        <meta property='og:type' content='website' />
       </Head>
       <Layout>
         <Box as='ul'>

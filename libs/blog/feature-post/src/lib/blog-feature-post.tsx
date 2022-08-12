@@ -19,11 +19,15 @@ export function BlogFeaturePost({ postData }: BlogFeaturePostProps) {
         <title>
           {postData.title} | {title}
         </title>
-        <meta name='description' content={description} />
-        <meta name='og:title' content={postData.title} />
-        <meta name='og:description' content={description} />
-        <meta name='og:url' content={siteUrl} />
-        <meta name='og:type' content='website' />
+        <meta property='description' content={description} />
+        <meta property='og:title' content={postData.title} />
+        <meta property='og:description' content={description} />
+        <meta property='og:type' content='website' />
+        <meta property='og:image' content={`${siteUrl}${postData.featuredImage}`} />
+        <meta property='og:image:secure_url' content={`${siteUrl}${postData.featuredImage}`} />
+        <meta property='og:image:type' content='image/png' />
+        <meta property='og:image:width' content='1280' />
+        <meta property='og:image:height' content='720' />
       </Head>
 
       <Layout>
