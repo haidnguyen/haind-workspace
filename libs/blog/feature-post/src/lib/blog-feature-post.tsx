@@ -2,6 +2,7 @@ import { Box, Text } from '@chakra-ui/react';
 import { PostDetail } from '@haind-workspace/blog/data-posts';
 import { useTitle } from '@haind-workspace/blog/data-title';
 import { Layout } from '@haind-workspace/blog/ui-layout';
+import { BlogUiSeo } from '@haind-workspace/blog/ui-seo';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Markdown } from './markdown';
@@ -15,20 +16,12 @@ export function BlogFeaturePost({ postData }: BlogFeaturePostProps) {
 
   return (
     <>
-      <Head>
-        <title>
-          {postData.title} | {title}
-        </title>
-        <meta property='description' content={description} />
-        <meta property='og:title' content={postData.title} />
-        <meta property='og:description' content={description} />
-        <meta property='og:type' content='website' />
-        <meta property='og:image' content={`${siteUrl}${postData.featuredImage}`} />
-        <meta property='og:image:secure_url' content={`${siteUrl}${postData.featuredImage}`} />
-        <meta property='og:image:type' content='image/png' />
-        <meta property='og:image:width' content='1280' />
-        <meta property='og:image:height' content='720' />
-      </Head>
+      <BlogUiSeo
+        title={postData.title}
+        titleTag={title}
+        description={description}
+        image={`${siteUrl}${postData.featuredImage}`}
+      />
 
       <Layout>
         <Box w='100%' height={['250px', '400px']} pos='relative' mb={[2, 8]}>

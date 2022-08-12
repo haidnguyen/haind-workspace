@@ -30,7 +30,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
             description="Hai's personal blog"
             keywords={['Blog', 'Angular', 'React', 'Javascript', 'Typescript', 'Functional Progamming']}
             siteUrl='https://haidnguyen.dev'
-            title='Higher-order Enginerr'
+            title='Higher-order Engineer'
           >
             <Box as='main'>
               <Component {...pageProps} />
