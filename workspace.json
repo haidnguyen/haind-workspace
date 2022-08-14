@@ -11,6 +11,6 @@
     "blog-ui-date": "libs/blog/ui-date",
     "blog-ui-layout": "libs/blog/ui-layout",
     "blog-ui-seo": "libs/blog/ui-seo",
-    "ng-conduit": "apps/ng-conduit"
+    "nx-conduit": "apps/nx-conduit"
   }
 }

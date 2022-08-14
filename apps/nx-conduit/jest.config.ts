@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'ng-conduit',
+  displayName: 'nx-conduit',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/ng-conduit',
+  coverageDirectory: '../../coverage/apps/nx-conduit',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
