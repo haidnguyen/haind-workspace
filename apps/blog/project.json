@@ -60,6 +60,12 @@
       "options": {
         "command": "next start dist/apps/blog"
       }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx vercel --prod"
+      }
     }
   },
   "tags": []
