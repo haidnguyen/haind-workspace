@@ -64,7 +64,13 @@
     "deploy": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npx vercel --prod"
+        "command": "vercel --prod --prebuilt"
+      }
+    },
+    "build-prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vercel build --prod"
       }
     }
   },
