@@ -23,7 +23,7 @@ jobs:
         run: pnpm install
 
       - name: Run Test
-        run: pnpm nx affected --target=test
+        run: pnpm nx affected --target=test --base=origin/main --head=$PR_BRANCH_NAME
 
   Lint:
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
          run: pnpm install
 
        - name: Run Lint
-         run: pnpm nx affected --target=lint
+         run: pnpm nx affected --target=lint --base=origin/main --head=$PR_BRANCH_NAME
 
   Build:
     runs-on: ubuntu-latest
@@ -63,18 +63,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
 
-      - uses: nrwl/nx-set-shas@v2
-      - run: |
-          echo "BASE: ${{ env.NX_BASE }}"
-          echo "HEAD: ${{ env.NX_HEAD }}"
-
       - name: Install Dependencies
         run: pnpm install
 
       - name: Pull Vercel Environments
         run: pnpm vercel pull --environment=production --token=${{ secrets.VERCEL_TOKEN }} --yes
       - name: Build
-        run: pnpm nx affected --target=build
+        run: pnpm nx affected --target=build --base=origin/main --head=$PR_BRANCH_NAME
 
       - name: Zip Artifacts
         run: zip -r artifacts.zip .vercel/
