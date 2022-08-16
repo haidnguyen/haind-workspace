@@ -82,6 +82,18 @@
         "jestConfig": "apps/nx-conduit/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "build-prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'build nx-conduit prod'"
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'deploy nx-conduit prod'"
+      }
     }
   },
   "tags": []
