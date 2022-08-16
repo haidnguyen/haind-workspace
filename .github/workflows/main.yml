@@ -1,4 +1,4 @@
-name: CI
+name: Deployment
 
 on:
   push:
@@ -6,8 +6,7 @@ on:
       - main
 
 jobs:
-
-  install:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -27,10 +26,62 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: node_modules
-          path: node_modules
+      - name: Run Test
+        run: pnpm nx affected --target=test
+
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+       - uses: actions/checkout@v3
+         with:
+          fetch-depth: 0
+       - uses: pnpm/action-setup@v2.2.2
+         with:
+          version: 7
+       - name: Use Node.js ${{ matrix.node-version }}
+         uses: actions/setup-node@v3
+         with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+       - run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
+       - name: Install Dependencies
+         run: pnpm install
+
+       - name: Run Test
+         run: pnpm nx affected --target=test
+
+  Build:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+         with:
+          fetch-depth: 0
+       - uses: pnpm/action-setup@v2.2.2
+         with:
+          version: 7
+       - name: Use Node.js ${{ matrix.node-version }}
+         uses: actions/setup-node@v3
+         with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+       - run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
+       - name: Install Dependencies
+         run: pnpm install
+
+       - name: Run Test
+         run: pnpm nx affected --target=build-prod
+
+       - name: Zip Artifacts
+         run: zip -r artifacts.zip .vercel/
+
+       - name: Upload Artifacts
+         uses: actions/upload-artifact@v3
+         with:
+          name: artifacts
+          path: artifacts.zip
           retention-days: 14
 
