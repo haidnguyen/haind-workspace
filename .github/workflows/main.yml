@@ -65,9 +65,6 @@ jobs:
           cache: 'pnpm'
 
       - uses: nrwl/nx-set-shas@v2
-      - run: |
-          echo "BASE: ${{ env.NX_BASE }}"
-          echo "HEAD: ${{ env.NX_HEAD }}"
 
       - name: Install Dependencies
         run: pnpm install
@@ -106,9 +103,6 @@ jobs:
           cache: 'pnpm'
 
       - uses: nrwl/nx-set-shas@v2
-      - run: |
-          echo "BASE: ${{ env.NX_BASE }}"
-          echo "HEAD: ${{ env.NX_HEAD }}"
 
       - name: Install Dependencies
         run: pnpm install
