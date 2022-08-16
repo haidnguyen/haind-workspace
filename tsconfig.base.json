@@ -22,7 +22,9 @@
       "@haind-workspace/blog/feature-post": ["libs/blog/feature-post/src/index.ts"],
       "@haind-workspace/blog/ui-date": ["libs/blog/ui-date/src/index.ts"],
       "@haind-workspace/blog/ui-layout": ["libs/blog/ui-layout/src/index.ts"],
-      "@haind-workspace/blog/ui-seo": ["libs/blog/ui-seo/src/index.ts"]
+      "@haind-workspace/blog/ui-seo": ["libs/blog/ui-seo/src/index.ts"],
+      "@haind-workspace/nx-conduit/feature-home": ["libs/nx-conduit/feature-home/src/index.ts"],
+      "@haind-workspace/nx-conduit/ui-shell": ["libs/nx-conduit/ui-shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
