@@ -13,13 +13,16 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(
-      RouterModule.forRoot([
-        {
-          path: '',
-          loadComponent: () => import('@haind-workspace/nx-conduit/ui-shell').then(m => m.LayoutComponent),
-          loadChildren: () => import('@haind-workspace/nx-conduit/ui-shell').then(m => m.routes),
-        },
-      ])
+      RouterModule.forRoot(
+        [
+          {
+            path: '',
+            loadComponent: () => import('@haind-workspace/nx-conduit/ui-shell').then(m => m.LayoutComponent),
+            loadChildren: () => import('@haind-workspace/nx-conduit/ui-shell').then(m => m.routes),
+          },
+        ],
+        { useHash: true }
+      )
     ),
   ],
 }).catch(console.log.bind(console, 'Application bootstrap error: '));
