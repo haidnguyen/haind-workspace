@@ -1,5 +1,5 @@
 import { AtSignIcon, ExternalLinkIcon } from '@chakra-ui/icons';
-import { Box, calc, ChakraProps, Flex, Text, VStack } from '@chakra-ui/react';
+import { Box, ChakraProps, Flex, Text, VStack } from '@chakra-ui/react';
 
 export interface TimeSpanItemProps {
   lineColor: ChakraProps['borderColor'];
