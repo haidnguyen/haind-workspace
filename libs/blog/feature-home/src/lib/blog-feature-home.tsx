@@ -3,7 +3,6 @@ import { PostData } from '@haind-workspace/blog/data-posts';
 import { useTitle } from '@haind-workspace/blog/data-title';
 import { Layout } from '@haind-workspace/blog/ui-layout';
 import { BlogUiSeo } from '@haind-workspace/blog/ui-seo';
-import Head from 'next/head';
 import { PostItem } from './post-item';
 
 interface BlogFeatureHomeProps {
