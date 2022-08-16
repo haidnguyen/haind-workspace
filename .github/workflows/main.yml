@@ -92,6 +92,7 @@ jobs:
     needs: [Build]
     environment:
       name: Production
+      url: https://haidnguyen.dev
     steps:
       - uses: actions/checkout@v3
         with:
@@ -120,9 +121,6 @@ jobs:
 
       - name: Unzip Artifacts
         run: unzip artifacts.zip
-
-      - name: Display files
-        run: ls -R .vercel/
 
       - name: Deploy to Vercel
         run: pnpm nx affected --target=deploy
