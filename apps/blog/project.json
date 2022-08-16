@@ -64,7 +64,7 @@
     "deploy": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "vercel --prod --prebuilt"
+        "command": "vercel --prod --prebuilt --token ${VERCEL_TOKEN}"
       }
     },
     "build-prod": {
