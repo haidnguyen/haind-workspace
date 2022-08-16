@@ -26,7 +26,6 @@ export function BlogFeaturePost({ postData }: BlogFeaturePostProps) {
         <Box w='100%' height={['250px', '400px']} pos='relative' mb={[2, 8]}>
           <Image src={postData.featuredImage} layout='fill' objectFit='contain' />
         </Box>
-        Test
         <Text as='h1' fontSize={['3xl', '5xl']} fontWeight='bold' mb={2} textAlign='center'>
           {postData.title}
         </Text>

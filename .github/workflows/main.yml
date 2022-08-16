@@ -1,4 +1,4 @@
-name: Check & Build
+name: Deployment
 
 on:
   push:
@@ -90,6 +90,8 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     needs: [Build]
+    environment:
+      name: Production
     steps:
       - uses: actions/checkout@v3
         with:
