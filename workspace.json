@@ -11,6 +11,8 @@
     "blog-ui-date": "libs/blog/ui-date",
     "blog-ui-layout": "libs/blog/ui-layout",
     "blog-ui-seo": "libs/blog/ui-seo",
-    "nx-conduit": "apps/nx-conduit"
+    "nx-conduit": "apps/nx-conduit",
+    "nx-conduit-feature-home": "libs/nx-conduit/feature-home",
+    "nx-conduit-ui-shell": "libs/nx-conduit/ui-shell"
   }
 }

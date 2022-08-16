@@ -1,7 +1,7 @@
-import { enableProdMode } from '@angular/core';
+import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app/app.component';
 
 import { environment } from './environments/environment';
@@ -10,4 +10,16 @@ if (environment.production) {
   enableProdMode();
 }
 
-bootstrapApplication(AppComponent).catch(console.log.bind(console, 'Application bootstrap error: '));
+bootstrapApplication(AppComponent, {
+  providers: [
+    importProvidersFrom(
+      RouterModule.forRoot([
+        {
+          path: '',
+          loadComponent: () => import('@haind-workspace/nx-conduit/ui-shell').then(m => m.LayoutComponent),
+          loadChildren: () => import('@haind-workspace/nx-conduit/ui-shell').then(m => m.routes),
+        },
+      ])
+    ),
+  ],
+}).catch(console.log.bind(console, 'Application bootstrap error: '));
