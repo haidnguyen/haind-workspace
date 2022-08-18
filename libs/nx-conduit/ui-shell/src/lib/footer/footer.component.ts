@@ -6,7 +6,16 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <p>footer works!</p>
+    <footer class="bg-gray-100 h-14 flex items-center absolute bottom-0 w-full">
+      <div class="container mx-auto text-gray-400 text-sm">
+        <a href="/" class="text-green-600">conduit</a>
+        <span class="attribution">
+          An interactive learning project from
+          <a href="https://thinkster.io" class="text-green-600 text-sm">Thinkster</a>
+          . Code &amp; design licensed under MIT.
+        </span>
+      </div>
+    </footer>
   `,
   styles: [],
 })
