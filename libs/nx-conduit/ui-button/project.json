@@ -1,0 +1,38 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/nx-conduit/ui-button/src",
+  "prefix": "haind-workspace",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/nx-conduit/ui-button"],
+      "options": {
+        "project": "libs/nx-conduit/ui-button/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/nx-conduit/ui-button/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/nx-conduit/ui-button/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/nx-conduit/ui-button"],
+      "options": {
+        "jestConfig": "libs/nx-conduit/ui-button/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/nx-conduit/ui-button/**/*.ts", "libs/nx-conduit/ui-button/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

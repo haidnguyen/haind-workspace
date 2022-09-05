@@ -13,6 +13,7 @@
     "blog-ui-seo": "libs/blog/ui-seo",
     "nx-conduit": "apps/nx-conduit",
     "nx-conduit-feature-home": "libs/nx-conduit/feature-home",
+    "nx-conduit-ui-button": "libs/nx-conduit/ui-button",
     "nx-conduit-ui-shell": "libs/nx-conduit/ui-shell"
   }
 }

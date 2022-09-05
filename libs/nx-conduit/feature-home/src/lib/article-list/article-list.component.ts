@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ButtonComponent } from '@haind-workspace/nx-conduit/ui-button';
 
 @Component({
   selector: 'haind-workspace-article-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonComponent],
   template: `
     <div *ngFor="let article of articles" class="border-b border-gray-200 py-6 last:border-b-0">
       <div class="flex justify-between items-center mb-4">
@@ -15,7 +16,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
             <span class="text-xs text-gray-300">{{ article.date | date: 'mediumDate' }}</span>
           </div>
         </div>
-        <button type="button" class="border border-highlight px-2 h-7 text-sm rounded text-highlight">
+        <button type="button" conduitButton>
           {{ article.like }}
         </button>
       </div>
