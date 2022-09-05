@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   template: `
     <header class="shadow-xl">
       <nav class="container mx-auto flex justify-between items-center h-14">
-        <a href="/" class="text-2xl text-green-600">conduit</a>
+        <a href="/" class="text-2xl text-highlight">conduit</a>
 
         <ul class="grid grid-flow-col grid-cols-3 gap-4 text-gray-500">
           <li>

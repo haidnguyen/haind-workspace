@@ -1,12 +1,16 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'haind-workspace-home-page',
   standalone: true,
   imports: [CommonModule],
   template: `
-    <p>home-page works!</p>
+    <section class="bg-highlight">
+      <h1>conduit</h1>
+      <p>A place to share your knowledge</p>
+    </section>
+    <section>Page</section>
   `,
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,

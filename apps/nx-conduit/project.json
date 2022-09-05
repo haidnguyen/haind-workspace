@@ -58,7 +58,8 @@
           "browserTarget": "nx-conduit:build:production"
         },
         "development": {
-          "browserTarget": "nx-conduit:build:development"
+          "browserTarget": "nx-conduit:build:development",
+          "hmr": true
         }
       },
       "defaultConfiguration": "development"
