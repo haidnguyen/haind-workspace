@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <footer class="bg-gray-100 h-14 flex items-center absolute bottom-0 w-full">
+    <footer class="bg-gray-100 h-14 flex items-center w-full">
       <div class="container mx-auto text-gray-400 text-sm">
         <a href="/" class="text-green-600">conduit</a>
         <span class="attribution">

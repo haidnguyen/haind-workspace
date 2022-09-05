@@ -13,7 +13,7 @@ import { TagListComponent } from '../tag-list/tag-list.component';
       <p class="text-white text-2xl font-light">A place to share your knowledge</p>
     </section>
 
-    <section class="container mx-auto grid grid-cols-4">
+    <section class="container mx-auto grid grid-cols-4 gap-8">
       <div class="col-span-3">
         <haind-workspace-article-list></haind-workspace-article-list>
       </div>

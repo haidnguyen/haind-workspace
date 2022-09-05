@@ -10,7 +10,9 @@ import { FooterComponent } from '../footer/footer.component';
   imports: [CommonModule, RouterModule, HeaderComponent, FooterComponent],
   template: `
     <haind-workspace-header></haind-workspace-header>
-    <router-outlet></router-outlet>
+    <div class="min-h-layout">
+      <router-outlet></router-outlet>
+    </div>
     <haind-workspace-footer></haind-workspace-footer>
   `,
   styles: [],
