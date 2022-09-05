@@ -1,0 +1,38 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/nx-conduit/feature-register/src",
+  "prefix": "haind-workspace",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/nx-conduit/feature-register"],
+      "options": {
+        "project": "libs/nx-conduit/feature-register/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/nx-conduit/feature-register/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/nx-conduit/feature-register/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/nx-conduit/feature-register"],
+      "options": {
+        "jestConfig": "libs/nx-conduit/feature-register/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/nx-conduit/feature-register/**/*.ts", "libs/nx-conduit/feature-register/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
