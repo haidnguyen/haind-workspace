@@ -12,6 +12,7 @@
     "blog-ui-layout": "libs/blog/ui-layout",
     "blog-ui-seo": "libs/blog/ui-seo",
     "nx-conduit": "apps/nx-conduit",
+    "nx-conduit-data-access": "libs/nx-conduit/data-access",
     "nx-conduit-feature-home": "libs/nx-conduit/feature-home",
     "nx-conduit-feature-register": "libs/nx-conduit/feature-register",
     "nx-conduit-ui-button": "libs/nx-conduit/ui-button",

@@ -1,4 +1,5 @@
-import { enableProdMode } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 
 import { PreloadAllModules, provideRouter, Routes, withPreloading, withRouterConfig } from '@angular/router';
@@ -21,5 +22,6 @@ const routes: Routes = [
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes, withRouterConfig({ onSameUrlNavigation: 'reload' }), withPreloading(PreloadAllModules)),
+    importProvidersFrom(HttpClientModule),
   ],
 }).catch(console.log.bind(console, 'Application bootstrap error: '));
