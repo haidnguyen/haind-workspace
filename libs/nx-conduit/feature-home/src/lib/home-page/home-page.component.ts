@@ -11,7 +11,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       <p class="text-white text-2xl font-light">A place to share your knowledge</p>
     </section>
 
-    <section>Page</section>
+    <section class="container mx-auto grid grid-cols-4">
+      <div class="col-span-3">placeholder for article list</div>
+      <div class="col-span-1">placeholder for tags</div>
+    </section>
   `,
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
