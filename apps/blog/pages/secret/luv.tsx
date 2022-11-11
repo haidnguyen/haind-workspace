@@ -1,8 +1,9 @@
 import { Box } from '@chakra-ui/react';
+import Head from 'next/head';
 import { useLayoutEffect, useRef } from 'react';
 import { fragmentSource, vertexData, vertexSource } from '../../app/sources';
 
-const texts = ['For', 'Phương', 'With ❤️'];
+const texts = ['To', 'Phương', 'With ❤️'];
 const morphTime = 1;
 const cooldownTime = 0.25;
 
@@ -150,11 +151,20 @@ export default function LuvFeature() {
 
   return (
     <>
-      <Box bgColor='#000' w='100%' h='100vh' sx={{ '#filters': { display: 'none' } }}>
+      <Head>
+        <title>❤️</title>
+      </Head>
+      <Box
+        bgColor='#000'
+        w='100%'
+        h='100vh'
+        sx={{ '#filters': { display: 'none' } }}
+        fontSize={{ base: '4pt', md: '16pt' }}
+      >
         <canvas id='canvas' ref={canvasRef} />
         <Box
           position='absolute'
-          top='0'
+          top='-8px'
           bottom='0'
           w='full'
           filter='url(#threshold) blur(0.6px)'
@@ -168,7 +178,7 @@ export default function LuvFeature() {
               position: 'absolute',
               width: '100%',
               display: 'inline-block',
-              fontSize: '44pt',
+              fontSize: '3em',
               textAlgin: 'center',
               userSelect: 'none',
             },
