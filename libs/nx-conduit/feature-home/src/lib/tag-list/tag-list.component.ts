@@ -1,8 +1,9 @@
+/* eslint-disable @angular-eslint/component-selector */
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'haind-workspace-tag-list',
+  selector: 'app-tag',
   standalone: true,
   imports: [CommonModule],
   template: `
@@ -20,4 +21,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class TagListComponent {
   tags = ['implementations', 'welcome', 'introduction', 'codebaseShow'];
+  @Input()
+  tag = '';
 }

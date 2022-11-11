@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { UserService } from '@haind-workspace/nx-conduit/data-access';
 import { ButtonComponent } from '@haind-workspace/nx-conduit/ui-button';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'haind-workspace-sign-up-page',
@@ -53,11 +53,7 @@ export class SignUpPageComponent implements OnDestroy {
 
   private readonly destroy$ = new Subject<void>();
 
-  constructor(
-    private readonly fb: FormBuilder,
-    private readonly userService: UserService,
-    private readonly router: Router
-  ) {}
+  constructor(private readonly fb: FormBuilder, private readonly userService: UserService) {}
 
   ngOnDestroy(): void {
     this.destroy$.next();
@@ -71,9 +67,6 @@ export class SignUpPageComponent implements OnDestroy {
         password: this.form.value.password ?? '',
         email: this.form.value.email ?? '',
       })
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(user => {
-        this.router.navigateByUrl('/home');
-      });
+      .subscribe();
   }
 }

@@ -48,4 +48,7 @@ import { ButtonComponent } from '@haind-workspace/nx-conduit/ui-button';
 })
 export class ArticlePreviewComponent {
   @Input() article: any;
+
+	test() {
+	}
 }

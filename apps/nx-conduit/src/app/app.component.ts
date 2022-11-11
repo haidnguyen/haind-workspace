@@ -6,11 +6,17 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   template: `
-    <router-outlet></router-outlet>
-  `,
+	 	<div (click)="onClick()"></div>
+     <router-outlet></router-outlet>
+   `,
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   title = 'ng-conduit';
+
+
+	onClick() {
+		console.log('lsp');
+	}
 }

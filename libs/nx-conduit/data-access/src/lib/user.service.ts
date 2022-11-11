@@ -10,13 +10,12 @@ interface RegisterUserPayload {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-
-  constructor(private readonly http: HttpClient) { }
+  constructor(private readonly http: HttpClient) {}
 
   register(payload: RegisterUserPayload) {
-    return this.http.post<{username: string}>(`${API_URL}/users`, { user: payload });
+    return this.http.post<{ username: string }>(`${API_URL}/users`, { user: payload });
   }
 }

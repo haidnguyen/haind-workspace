@@ -3,6 +3,7 @@ import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 
 import { PreloadAllModules, provideRouter, Routes, withPreloading, withRouterConfig } from '@angular/router';
+import { provideApiUrl } from '@haind-workspace/nx-conduit/data-access';
 import { AppComponent } from './app/app.component';
 
 import { environment } from './environments/environment';
@@ -23,5 +24,6 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes, withRouterConfig({ onSameUrlNavigation: 'reload' }), withPreloading(PreloadAllModules)),
     importProvidersFrom(HttpClientModule),
+    provideApiUrl(environment.api),
   ],
 }).catch(console.log.bind(console, 'Application bootstrap error: '));
