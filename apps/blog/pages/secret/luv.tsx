@@ -150,7 +150,7 @@ export default function LuvFeature() {
 
   return (
     <>
-      <Box bgColor='#000' w='100%' h='100vh'>
+      <Box bgColor='#000' w='100%' h='100vh' sx={{ '#filters': { display: 'none' } }}>
         <canvas id='canvas' ref={canvasRef} />
         <Box
           position='absolute'
